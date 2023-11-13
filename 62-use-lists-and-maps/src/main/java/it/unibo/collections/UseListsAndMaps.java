@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * Example class using {@link List} and {@link Map}.
@@ -55,7 +54,13 @@ public final class UseListsAndMaps {
          * using the previous lists. In order to measure times, use as example
          * TestPerformance.java.
          */
-        
+        for (int i = 0; i < 100000; i++) {
+            list.add(0, i);
+        }
+
+        for (int i = 0; i < 100000; i++) {
+            linked.add(0, i);
+        }
         /*
          * 6) Measure the performance of reading 1000 times an element whose
          * position is in the middle of the collection for both ArrayList and
