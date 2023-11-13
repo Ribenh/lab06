@@ -39,7 +39,9 @@ public final class UseListsAndMaps {
          * element of the first list. You can not use any "magic number".
          * (Suggestion: use a temporary variable)
          */
-        
+        int temp = list.get(list.size() - 1);
+        list.set(list.size() - 1, list.get(0));
+        list.set(0, temp);
         /*
          * 4) Using a single for-each, print the contents of the arraylist.
          */
