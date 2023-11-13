@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
+
 /**
  * Example class using {@link List} and {@link Map}.
  *
@@ -54,13 +56,19 @@ public final class UseListsAndMaps {
          * using the previous lists. In order to measure times, use as example
          * TestPerformance.java.
          */
+        long time = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             list.add(0, i);
         }
-
+        time = System.nanoTime() - time;
+        System.out.println("Inserting " + 100000 + " elements as first in an ArrayList took " + timeAsString(time));
+        
+        time = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
             linked.add(0, i);
         }
+        time = System.nanoTime() - time;
+        System.out.println("Inserting " + 100000 + " elements as first in a LinkedList took " + timeAsString(time));
         /*
          * 6) Measure the performance of reading 1000 times an element whose
          * position is in the middle of the collection for both ArrayList and
@@ -86,5 +94,9 @@ public final class UseListsAndMaps {
         /*
          * 8) Compute the population of the world
          */
+    }
+    
+    private static String timeAsString(final long nanoseconds) {
+        return nanoseconds + "ns (" + NANOSECONDS.toMillis(nanoseconds) + "ms)";
     }
 }
