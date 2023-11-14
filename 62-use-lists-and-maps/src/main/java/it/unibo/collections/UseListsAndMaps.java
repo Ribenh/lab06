@@ -13,6 +13,8 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
  */
 public final class UseListsAndMaps {
 
+    private static final long AFRICA_POPULATION = 1110635000;
+
     private UseListsAndMaps() {
     }
 
