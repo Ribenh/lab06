@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
@@ -14,6 +15,12 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
 public final class UseListsAndMaps {
 
     private static final long AFRICA_POPULATION = 1110635000;
+    private static final long AMERICAS_POPULATION = 972005000;
+    private static final long ANTARCTICA_POPULATION = 0;
+    private static final long ASIA_POPULATION = 4298723000L;
+    private static final long EUROPE_POPULATION = 742452000;
+    private static final long OCEANIA_POPULATION = 38304000;
+
 
     private UseListsAndMaps() {
     }
@@ -106,9 +113,16 @@ public final class UseListsAndMaps {
          *
          * Oceania -> 38,304,000
          */
+        Map<String, Long> world = new HashMap<>();
         /*
          * 8) Compute the population of the world
          */
+        world.put("Africa", AFRICA_POPULATION);
+        world.put("Americas", AMERICAS_POPULATION);
+        world.put("Antarctica", ANTARCTICA_POPULATION);
+        world.put("Asia", ASIA_POPULATION);
+        world.put("Europe", EUROPE_POPULATION);
+        world.put("Oceania", OCEANIA_POPULATION);
     }
     
     private static String timeAsString(final long nanoseconds) {
