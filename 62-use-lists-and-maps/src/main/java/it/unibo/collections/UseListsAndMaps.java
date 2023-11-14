@@ -114,15 +114,21 @@ public final class UseListsAndMaps {
          * Oceania -> 38,304,000
          */
         Map<String, Long> world = new HashMap<>();
-        /*
-         * 8) Compute the population of the world
-         */
+
         world.put("Africa", AFRICA_POPULATION);
         world.put("Americas", AMERICAS_POPULATION);
         world.put("Antarctica", ANTARCTICA_POPULATION);
         world.put("Asia", ASIA_POPULATION);
         world.put("Europe", EUROPE_POPULATION);
         world.put("Oceania", OCEANIA_POPULATION);
+        /*
+         * 8) Compute the population of the world
+         */
+        long worldPopulation = 0;
+        for (long population : world.values()) {
+            worldPopulation += population;
+        }
+        System.out.println("World Population = " + worldPopulation);
     }
     
     private static String timeAsString(final long nanoseconds) {
